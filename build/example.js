@@ -1,7 +1,7 @@
 // IGNORE
 /* globals console */
 // ENDIGNORE
-var CollectionHistory = require('./collection-history');
+var CollectionHistory = require('../collection-history');
 var Collection = require('ampersand-collection').extend({
     model: require('ampersand-state').extend({
         props: {

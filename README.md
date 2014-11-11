@@ -20,7 +20,7 @@ Provides a way to track changes for specified keys of models within a collection
 ## Example
 
 ```js
-var CollectionHistory = require('./collection-history');
+var CollectionHistory = require('ampersand-collection-history');
 var Collection = require('ampersand-collection').extend({
     model: require('ampersand-state').extend({
         props: {
