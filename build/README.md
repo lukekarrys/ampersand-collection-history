@@ -47,10 +47,30 @@ you can pass `{ignoreHistory: true}` as an option on the change.
 If there are previous items in the history, this moves the index of the stack back, gets the previous change and returns it.
 If `apply` is `true` then the change will also be `set` on the model.
 
+The returned object will look like this:
+
+```js
+{
+    obj: modelInstance,
+    key: keyName,
+    value: undoneValue
+}
+```
+
 #### `redo([apply Boolean])`
 
 If there are next items in the history, this moves the index of the stack forward, gets the next change and returns it.
 If `apply` is `true` then the change will also be `set` on the model.
+
+The returned object will look like this:
+
+```js
+{
+    obj: modelInstance,
+    key: keyName,
+    value: redoneValue
+}
+```
 
 #### `add(model, key, previousValue, newValue)`
 

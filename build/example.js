@@ -31,10 +31,10 @@ collection.get(3).date = '2014-11-07';
 var log = console.log;
 console.log = function (action) { log(action.obj.id, action.value); };
 // ENDIGNORE
-console.log(collection.history.undo()); // {obj: child {id: 3, ...}, value: '2014-11-12'}
-console.log(collection.history.undo()); // {obj: child {id: 2, ...}, value: '2014-11-11'}
-console.log(collection.history.undo()); // {obj: child {id: 1, ...}, value: '2014-11-10'}
+collection.history.undo(); // {obj: child {id: 3, ...}, value: '2014-11-12'}
+collection.history.undo(); // {obj: child {id: 2, ...}, value: '2014-11-11'}
+collection.history.undo(); // {obj: child {id: 1, ...}, value: '2014-11-10'}
 
-console.log(collection.history.redo()); // {obj: child {id: 1, ...}, value: '2014-11-05'}
-console.log(collection.history.redo()); // {obj: child {id: 2, ...}, value: '2014-11-05'}
-console.log(collection.history.redo()); // {obj: child {id: 3, ...}, value: '2014-11-07'}
+collection.history.redo(); // {obj: child {id: 1, ...}, value: '2014-11-05'}
+collection.history.redo(); // {obj: child {id: 2, ...}, value: '2014-11-05'}
+collection.history.redo(); // {obj: child {id: 3, ...}, value: '2014-11-07'}
