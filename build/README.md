@@ -17,10 +17,16 @@ ampersand-collection-history
 Provides a way to track changes for specified keys of models within a collection and undo and redo those changes.
 
 
-## Example
+## Examples
 
+### Ampersand
 ```js
-{{example.js}}
+{{ampersand}}
+```
+
+### Manual
+```js
+{{manual}}
 ```
 
 

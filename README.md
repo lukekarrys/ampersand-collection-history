@@ -17,8 +17,9 @@ ampersand-collection-history
 Provides a way to track changes for specified keys of models within a collection and undo and redo those changes.
 
 
-## Example
+## Examples
 
+### Ampersand
 ```js
 var CollectionHistory = require('ampersand-collection-history');
 var Collection = require('ampersand-collection').extend({
@@ -51,8 +52,26 @@ collection.history.undo(); // {obj: child {id: 2, ...}, value: '2014-11-11'}
 collection.history.undo(); // {obj: child {id: 1, ...}, value: '2014-11-10'}
 
 collection.history.redo(); // {obj: child {id: 1, ...}, value: '2014-11-05'}
-collection.history.redo(); // {obj: child {id: 2, ...}, value: '2014-11-05'}
+collection.history.redo(); // {obj: child {id: 2, ...}, value: '2014-11-06'}
 collection.history.redo(); // {obj: child {id: 3, ...}, value: '2014-11-07'}
+```
+
+### Manual
+```js
+var CollectionHistory = require('ampersand-collection-history');
+var collHistory = new CollectionHistory();
+
+collHistory.add(yourModel1, 'date', '2014-11-10', '2014-11-05');
+collHistory.add(yourModel2, 'date', '2014-11-11', '2014-11-06');
+collHistory.add(yourModel3, 'date', '2014-11-12', '2014-11-07');
+
+collHistory.undo(); // {obj: YourModel {...}, value: '2014-11-12'}
+collHistory.undo(); // {obj: YourModel {...}, value: '2014-11-11'}
+collHistory.undo(); // {obj: YourModel {...}, value: '2014-11-10'}
+
+collHistory.redo(); // {obj: YourModel {...}, value: '2014-11-05'}
+collHistory.redo(); // {obj: YourModel {...}, value: '2014-11-06'}
+collHistory.redo(); // {obj: YourModel {...}, value: '2014-11-07'}
 ```
 
 
