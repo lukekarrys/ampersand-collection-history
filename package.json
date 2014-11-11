@@ -25,8 +25,13 @@
   },
   "homepage": "https://github.com/lukekarrys/ampersand-collection-history",
   "keywords": [
-    "ampersand-collection",
-    "history"
+    "ampersand",
+    "collection",
+    "backbone",
+    "history",
+    "replay",
+    "undo",
+    "redo"
   ],
   "license": "MIT",
   "main": "collection-history.js",
