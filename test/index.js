@@ -25,7 +25,6 @@ test('should work for models with previous/current values', function (t) {
         date: '2014-08-14'
     }]);
     var h = new CollectionHistory({
-        autoListen: true,
         collection: collection,
         key: 'date'
     });
@@ -100,7 +99,6 @@ test('should reset when adding in the middle of items', function (t) {
         };
     }));
     var h = new CollectionHistory({
-        autoListen: true,
         collection: collection,
         key: 'date'
     });
@@ -143,6 +141,39 @@ test('should reset when adding in the middle of items', function (t) {
     action = h.redo();
     t.equal(action.obj, collection.at(9));
     t.equal(action.value, '2014-11-30');
+
+    t.end();
+});
+
+test('undo/redo can apply changes to model', function (t) {
+    var collection = new DateCollection(range(1, 15).map(function (index) {
+        return {
+            // 1, 2014-11-01
+            // 2, 2014-11-02
+            // etc
+            id: index,
+            date: '2014-11-' + (index < 10 ? '0' : '') + index
+        };
+    }));
+
+    var h = new CollectionHistory({
+        collection: collection,
+        key: 'date'
+    });
+
+    collection.each(function (model) {
+        // +1 to every date in collection
+        model.set('date', model.get('date').replace(/-(\d\d)$/, function (match, day) {
+            day = parseInt(day, 10) + 1;
+            return '-' + (day < 10 ? '0' : '') + day;
+        }));
+    });
+
+    t.equal(collection.get(14).date, '2014-11-15');
+    h.undo(true);
+    t.equal(collection.get(14).date, '2014-11-14');
+    h.redo(true);
+    t.equal(collection.get(14).date, '2014-11-15');
 
     t.end();
 });
