@@ -71,7 +71,7 @@ and a `key`. This will automatically call `listenToKey`.
 #### `listenToKey(collection, key)`
 
 Creates a change listener on the `collection` for the specified `key`. On each change event, an entry
-will be added to the history stack. If later on you want to a change to **not** get added to the history,
+will be added to the history stack. If later you want a change to **not** get added to the history,
 you can pass `{ignoreHistory: true}` as an option on the change.
 
 #### `undo([apply Boolean])`
