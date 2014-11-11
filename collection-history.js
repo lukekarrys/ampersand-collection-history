@@ -1,5 +1,4 @@
 var Events = require('backbone-events-standalone');
-var extend = require('lodash.assign');
 
 
 function CollectionHistory (options) {
@@ -126,7 +125,9 @@ Object.defineProperties(CollectionHistory.prototype, {
 });
 
 
-extend(CollectionHistory.prototype, Events);
+for (var key in Events) {
+    CollectionHistory.prototype[key] = Events[key];
+}
 
 
 module.exports = CollectionHistory;
