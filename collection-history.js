@@ -1,4 +1,4 @@
-var Events = require('backbone-events-standalone');
+var Events = require('ampersand-events');
 
 
 function CollectionHistory (options) {
