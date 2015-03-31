@@ -1,7 +1,7 @@
 {
   "name": "ampersand-collection-history",
   "description": "Keep a history of change events on a collection.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Luke Karrys <luke@lukekarrys.com>",
   "bugs": {
     "url": "https://github.com/lukekarrys/ampersand-collection-history/issues"
