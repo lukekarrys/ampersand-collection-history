@@ -12,35 +12,41 @@
   "devDependencies": {
     "ampersand-collection": "^1.4.5",
     "ampersand-state": "^4.5.0",
-    "browserify": "^9.0.3",
-    "js-size": "^1.0.3",
-    "jshint": "^2.6.3",
-    "lodash.range": "^3.0.0",
-    "phantomjs": "^1.9.16",
-    "precommit-hook": "^2.0.1",
-    "tap-spec": "^2.2.2",
-    "tape": "^3.5.0",
-    "tape-run": "^1.0.0"
+    "browserify": "^14.0.0",
+    "git-validate": "^2.2.2",
+    "js-size": "^2.0.0",
+    "lodash.range": "^3.2.0",
+    "standard": "^8.6.0",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.3",
+    "tape-run": "^2.2.1"
   },
   "homepage": "https://github.com/lukekarrys/ampersand-collection-history",
   "keywords": [
     "ampersand",
-    "collection",
     "backbone",
+    "collection",
     "history",
+    "redo",
     "replay",
-    "undo",
-    "redo"
+    "undo"
   ],
   "license": "MIT",
   "main": "collection-history.js",
+  "pre-commit": [
+    "lint",
+    "validate",
+    "test"
+  ],
   "repository": {
     "type": "git",
     "url": "http://github.com/lukekarrys/ampersand-collection-history"
   },
   "scripts": {
-    "test": "browserify test/* | tape-run | tap-spec",
+    "build": "node build/readme",
+    "lint": "standard",
     "size": "browserify collection-history | js-size",
-    "build": "node build/readme"
+    "test": "browserify test/* | tape-run | tap-spec",
+    "validate": "npm ls"
   }
 }
