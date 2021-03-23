@@ -2,9 +2,6 @@ ampersand-collection-history
 ===========
 
 [![NPM](https://nodei.co/npm/ampersand-collection-history.png)](https://nodei.co/npm/ampersand-collection-history/)
-[![Build Status](https://travis-ci.org/lukekarrys/ampersand-collection-history.png?branch=master)](https://travis-ci.org/lukekarrys/ampersand-collection-history)
-[![Greenkeeper badge](https://badges.greenkeeper.io/lukekarrys/ampersand-collection-history.svg)](https://greenkeeper.io/)
-
 
 ## Install
 
